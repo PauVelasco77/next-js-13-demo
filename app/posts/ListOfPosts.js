@@ -2,18 +2,21 @@ import Link from 'next/link'
 import { LikeButton } from './LikeButton'
 
 const fetchPost = () => {
-  console.log('FETCHING POSTS!!!!!')
+  // getStaticProps
+  //   return fetch('https://jsonplaceholder.typicode.com/posts')
 
+  // getServerSideProps
   //   return fetch('https://jsonplaceholder.typicode.com/posts', { cache: 'no-store' })
+
+  // getStaticProps with revalidate
   return fetch('https://jsonplaceholder.typicode.com/posts', {
     next: {
       revalidate: 10 // every 10 seconds revalidate the data from the server and update the cache with the new data
     }
   })
-    .then(response => {
-      console.log('RESPONSE')
-      return response.json()
-    })
+    .then(response =>
+      response.json()
+    )
 }
 
 export async function ListOfPosts () {
