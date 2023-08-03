@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { LikeButton } from './LikeButton'
 
-const fetchPost = () => {
+const fetchPosts = () => {
   // getStaticProps
   //   return fetch('https://jsonplaceholder.typicode.com/posts')
 
@@ -20,7 +20,7 @@ const fetchPost = () => {
 }
 
 export async function ListOfPosts () {
-  const posts = await fetchPost()
+  const posts = await fetchPosts()
 
   return posts.slice(0, 5).map(post => (
     <li key={post.id}>
