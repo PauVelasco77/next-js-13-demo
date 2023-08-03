@@ -1,4 +1,4 @@
-import { ListOfPosts } from './[id]/ListOfPosts'
+import { ListOfPosts } from './ListOfPosts'
 
 export default async function Posts ({ params }) {
   return (

@@ -7,10 +7,13 @@ const fetchPost = () => {
   //   return fetch('https://jsonplaceholder.typicode.com/posts', { cache: 'no-store' })
   return fetch('https://jsonplaceholder.typicode.com/posts', {
     next: {
-      revalidate: 60 // every 10 seconds revalidate the data from the server and update the cache with the new data
+      revalidate: 10 // every 10 seconds revalidate the data from the server and update the cache with the new data
     }
   })
-    .then(response => response.json())
+    .then(response => {
+      console.log('RESPONSE')
+      return response.json()
+    })
 }
 
 export async function ListOfPosts () {
