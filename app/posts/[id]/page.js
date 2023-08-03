@@ -1,6 +1,5 @@
-export default function Post ({ params }) {
-  const { id } = params
+export default function Post () {
   return (
-    <h1>POST NUMBER {id}</h1>
+    <h1>POST</h1>
   )
 }
