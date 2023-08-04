@@ -1,8 +1,6 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
 import Navigation from '../components/Navigation'
-
-const inter = Inter({ subsets: ['latin'] })
+import { roboto } from './font'
 
 export const metadata = {
   title: 'Next JS 13 app',
@@ -15,7 +13,7 @@ export default function RootLayout ({ children }) {
       <head>
         <title>😑</title>
       </head>
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <Navigation />
         {children}
       </body>
