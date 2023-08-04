@@ -1,6 +1,6 @@
 const fetchComments = async (id) => {
-  // await new Promise(resolve => setTimeout(resolve, 1500)) // simulate a slow connection
-
+  await new Promise(resolve => setTimeout(resolve, 1500)) // simulate a slow connection
+  // throw new Error('Error fetching comments')
   return fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`, {
     next: {
       revalidate: 10 // every 10 seconds revalidate the data from the server and update the cache with the new data

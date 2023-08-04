@@ -1,7 +1,9 @@
 import Link from 'next/link'
 import { LikeButton } from './LikeButton'
 
-const fetchPosts = () => {
+const fetchPosts = async () => {
+  await new Promise(resolve => setTimeout(resolve, 1500)) // simulate a slow connection
+
   // getStaticProps
   //   return fetch('https://jsonplaceholder.typicode.com/posts')
 
